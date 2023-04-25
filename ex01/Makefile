@@ -6,7 +6,7 @@
 #    By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 03:31:13 by mcourtoi          #+#    #+#              #
-#    Updated: 2023/04/25 03:39:42 by mcourtoi         ###   ########.fr        #
+#    Updated: 2023/04/25 21:32:39 by mcourtoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ CXXFLAGS	+=	-Wall -Wextra -Werror
 CXXFLAGS	+=	-MMD -MP
 CXXFLAGS	+=	-Wshadow
 CXXFLAGS	+=	-std=c++98
-CXXFLAGS	+=	-I${PRV_DIR}
+CXXFLAGS	+=	-I${INC_DIR}
 
 #######################################
 #                RULES                #

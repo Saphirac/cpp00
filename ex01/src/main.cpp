@@ -6,12 +6,12 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 03:49:28 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/04/25 14:11:42 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/04/25 21:32:54 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
 #include <iostream>
+#include "phonebook.hpp"
 
 int	main()
 {
@@ -24,9 +24,10 @@ int	main()
 		if (input == "EXIT")
 			return 0;
 		else if (input == "ADD")
-			book.add();
+			book.add_contact();
 		else if (input == "SEARCH")
-			book.search();
+			book.search_contact();
 		std::cout << "> ";
 	}
+	return 0;
 }
