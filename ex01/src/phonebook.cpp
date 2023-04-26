@@ -6,18 +6,28 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 21:10:03 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/04/25 23:15:03 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/04/26 03:55:25 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 #include <cstdlib>
 #include "phonebook.hpp"
 
-void	add_contact()
+bool	is_number(char const *str)
 {
-	
-	for (i = 0; repertory[i])
+	for (int i = 0; str[i]; i++)
+		if (isdigit(str[i]) == false)
+			return false;
+	return true;
+}
+
+
+void	Phonebook::add_contact()
+{
+	int	i = 0;
+	while (i < 8 && repertory[i].index >= 0)
 		i++;
 	if (i == 8)
 		i--;
@@ -27,14 +37,19 @@ void	add_contact()
 	repertory[i].add_number();
 	repertory[i].add_nickname();
 	repertory[i].add_darkest_secret();
+	if (repertory[i].is_empty())
+	{
+		std::cout << "Please input valid contact.\n";
+		repertory[i].index = -1;
+	}
 }
 
-void	search_contact()
+void	Phonebook::search_contact()
 {
 	int	i = 0;
-	char	*input;
+	std::string input;
 
-	while (repertory[i])
+	while (i < 8 && repertory[i].index >= 0)
 	{
 		repertory[i].print_for_search();
 		i++;
@@ -42,13 +57,14 @@ void	search_contact()
 	std::cout << "Which one ? ";
 	std::getline(std::cin, input);
 	i = 0;
-	while (repertory[i])
+	while (i < 8 && repertory[i].index >= 0)
 	{
-		if (atoi(input) == repertory[i].index)
+		if (is_number(input.data()) && atoi(input.data()) == repertory[i].index)
 		{
 			repertory[i].print_all();
-			break ;
+			return ;
 		}
+		i++;
 	}
-	std::cout << "Incorrect input." << std::endl;
+	std::cout << "Incorrect input.\n";
 }

@@ -6,30 +6,36 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 23:14:22 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/04/25 23:36:12 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/04/26 03:54:27 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "contact.cpp"
+#include <cstdlib>
+#include "contact.hpp"
 
-void	truncate(std::string field)
+Contact::Contact()
 {
-	if (field.len() < 10)
+	index = -1;
+}
+
+void	Contact::truncate(std::string field)
+{
+	if (field.length() <= 10)
 	{
-		for (i = 0; i < 10 - field.len(); i++)
+		for (unsigned long i = 0; i < (10 - field.length()); i++)
 			std::cout << ' ';
 		std::cout << field;
 	}
 	else
 	{
-		for (i = 0; i < 9; i++)
+		for (int i = 0; i < 9; i++)
 			std::cout << field[i];
 		std::cout << '.';
 	}
 }
 
-void	print_all()
+void	Contact::print_all()
 {
 	std::cout << this->_first_name << '\n';
 	std::cout << this->_last_name << '\n';
@@ -38,7 +44,7 @@ void	print_all()
 	std::cout << this->_darkest_secret << '\n';
 }
 
-void	print_for_search()
+void	Contact::print_for_search()
 {
 	std::cout << "         " << this->index << '|';
 	truncate(this->_first_name);
@@ -49,47 +55,59 @@ void	print_for_search()
 	std::cout << '\n';
 }
 
-void	add_first_name(char *input)
+void	Contact::add_first_name()
 {
-	char	*input;
+	std::string input;
 	
 	std::cout << "First name : ";
 	std::getline(std::cin, input);
 	this->_first_name = input;
 }
 
-void	add_last_name(char *input)
+void	Contact::add_last_name()
 {
-	char	*input;
+	std::string input;
 	
 	std::cout << "Last name : ";
 	std::getline(std::cin, input);
 	this->_last_name = input;
 }
 
-void	add_nickname(char *input)
+void	Contact::add_nickname()
 {
-	char	*input;
+	std::string input;
 	
 	std::cout << "Nickname : ";
 	std::getline(std::cin, input);
 	this->_nickname = input;
 }
 
-void	add_number(char *input)
+void	Contact::add_number()
 {
-	char	*input;
+	std::string input;
 	
 	std::cout << "Number : ";
 	std::getline(std::cin, input);
 	this->_number = input;
 }
 
-void	add_darkest_secret(char *input)
+void	Contact::add_darkest_secret()
 {
-	char	*input;
+	std::string input;
 	
 	std::cout << "Darkest Secret : ";
 	std::getline(std::cin, input);
 	this->_darkest_secret = input;
+}
+
+
+bool	Contact::is_empty()
+{
+	if (_first_name.empty()
+			|| _last_name.empty()
+			|| _nickname.empty()
+			|| _number.empty()
+			|| _darkest_secret.empty())
+		return (true);
+	return (false);
 }

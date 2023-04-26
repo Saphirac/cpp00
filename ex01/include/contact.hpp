@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 04:17:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/04/25 23:33:02 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/04/26 03:54:59 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,20 @@ private:
 	std::string	_number;
 	std::string	_darkest_secret;
 public:
+	Contact();
+	~Contact(){};
 	int		index;
-	char	*access_first_name();
-	char	*access_last_name();
-	char	*access_nickname();
-	char	*access_number();
-	char	*access_darkest_secret();
 
 	void	add_first_name();
 	void	add_last_name();
 	void	add_nickname();
 	void	add_number();
 	void	add_darkest_secret();
-	void	add_index(int i);
 
 	void	print_all();
 	void	print_for_search();
 	void	truncate(std::string field);
+	bool	is_empty();
 };
 
 #endif

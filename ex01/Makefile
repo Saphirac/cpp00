@@ -6,7 +6,7 @@
 #    By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 03:31:13 by mcourtoi          #+#    #+#              #
-#    Updated: 2023/04/25 21:32:39 by mcourtoi         ###   ########.fr        #
+#    Updated: 2023/04/26 03:10:45 by mcourtoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,9 @@ INC_DIR		= 	include
 #            SOURCE FILES            #
 ######################################
 SRC			=					\
-				
+				contact.cpp		\
+				main.cpp		\
+				phonebook.cpp	
 
 ######################################
 #            OBJECT FILES            #
