@@ -6,24 +6,27 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 22:33:06 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/04/25 00:22:31 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:32:54 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int		main(int ac, char **av)
+int		main(int const ac, char const *const *const av)
 {
-	int	i = 0;
-	int	j;
+	size_t	i = 0;
+	size_t	j;
 
 	if (ac > 1)
 	{
 		while (av[++i])
 		{
-			j = -1;
-			while (av[i][++j])
+			j = 0;
+			while (av[i][j])
+			{
 				std::cout << (char)(std::toupper(av[i][j]));
+				j++;
+			}
 		}
 	}
 	else

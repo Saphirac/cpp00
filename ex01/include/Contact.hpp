@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 04:17:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/04/26 03:54:59 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/09 20:40:04 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,21 @@ private:
 	std::string	_nickname;
 	std::string	_number;
 	std::string	_darkest_secret;
+	
+	void	_truncate(std::string field);
 public:
 	Contact();
-	~Contact(){};
+	~Contact();
 	int		index;
 
-	void	add_first_name();
-	void	add_last_name();
-	void	add_nickname();
-	void	add_number();
-	void	add_darkest_secret();
+	int	add_first_name();
+	int	add_last_name();
+	int	add_nickname();
+	int	add_number();
+	int	add_darkest_secret();
 
 	void	print_all();
 	void	print_for_search();
-	void	truncate(std::string field);
-	bool	is_empty();
 };
 
 #endif

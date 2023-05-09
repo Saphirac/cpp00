@@ -6,14 +6,14 @@
 #    By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 03:31:13 by mcourtoi          #+#    #+#              #
-#    Updated: 2023/04/26 03:10:45 by mcourtoi         ###   ########.fr        #
+#    Updated: 2023/05/09 20:35:51 by mcourtoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ######################################
 #              COMMANDS              #
 ######################################
-CXX			=	clang++
+CXX			=	c++
 LINK		=	clang++
 MKDIR		=	mkdir -p
 RM			=	rm -rf
@@ -34,9 +34,9 @@ INC_DIR		= 	include
 #            SOURCE FILES            #
 ######################################
 SRC			=					\
-				contact.cpp		\
+				Contact.cpp		\
 				main.cpp		\
-				phonebook.cpp	
+				Phonebook.cpp	
 
 ######################################
 #            OBJECT FILES            #
