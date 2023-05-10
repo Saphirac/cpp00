@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:35:34 by mcourtoi          #+#    #+#             */
-/*   Updated: 2023/04/26 19:15:25 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2023/05/11 01:21:06 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	Account::makeDeposit( int deposit )
 	std::cout
 	<< "index:" << _accountIndex << ';'
 	<< "p_amount:" << p_amount << ';'
-	<< "deposits:" << deposit << ';'
+	<< "deposit:" << deposit << ';'
 	<< "amount:" << _amount << ';'
 	<< "nb_deposits:" << _nbDeposits << std::endl;
 }
@@ -125,7 +125,6 @@ bool	Account::makeWithdrawal( int withdrawal )
 	_nbWithdrawals++;
 	_totalAmount -= withdrawal;
 	_totalNbWithdrawals++;
-	_displayTimestamp();
 	std::cout << withdrawal << ';' <<
 	"amount:" << _amount << ';' <<
 	"nb_withdrawals:" << _nbWithdrawals << std::endl;
@@ -142,7 +141,7 @@ void	Account::displayStatus( void ) const
 	_displayTimestamp();
 	std::cout <<
 	"index:" << _accountIndex << ";" <<
-	"total:" << _amount << ";" <<
+	"amount:" << _amount << ";" <<
 	"deposits:" << _nbDeposits << ";" <<
 	"withdrawals:" << _nbWithdrawals << std::endl;
 }
